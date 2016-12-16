@@ -50,7 +50,7 @@ public class MyBatisConfiguration implements TransactionManagementConfigurer {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 
-    @Bean
+    @Bean(name = "transactionManager")
     @ConditionalOnMissingBean
 	@Override
 	public PlatformTransactionManager annotationDrivenTransactionManager() {

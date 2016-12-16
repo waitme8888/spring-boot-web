@@ -53,7 +53,7 @@ public class SpringBootTest {
 	
 	@Test
 	public void mybatisTransactionTest() {
-		userService.deleteTransaction(2L);
+		userService.deleteTransaction(3L);
 	}
 
 }
