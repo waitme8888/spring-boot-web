@@ -25,7 +25,7 @@ import org.springframework.util.ObjectUtils;
 @EnableConfigurationProperties({MybatisProperties.class})
 @AutoConfigureAfter({ DataSourceAutoConfiguration.class })
 public class MyBatisConfiguration implements TransactionManagementConfigurer {
-	
+
 	@Autowired
 	private DataSource dataSource;
 	
@@ -43,7 +43,7 @@ public class MyBatisConfiguration implements TransactionManagementConfigurer {
 	    }
 	    return factory.getObject();
 	}
-	
+
     @Bean
     @ConditionalOnMissingBean
     public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {

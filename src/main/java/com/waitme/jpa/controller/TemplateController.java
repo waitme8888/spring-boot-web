@@ -13,14 +13,14 @@ public class TemplateController {
     @RequestMapping("/hello")
     public String helloHtml(Map<String,Object> map){
         map.put("hello","from TemplateControllerqqq.helloHtml");
-        return"/hello";
+        return "hello";
     }
-    /**
-     * 返回html模板.
-     */
-    @RequestMapping("/helloFtl")
-    public String helloFtl(Map<String,Object> map){
-        map.put("hello","from TemplateController.helloFtl");
-        return"/helloFtl";
-    }
+//    /**
+//     * 返回html模板.
+//     */
+//    @RequestMapping("/helloFtl")
+//    public String helloFtl(Map<String,Object> map){
+//        map.put("hello","from TemplateController.helloFtl");
+//        return"/helloFtl";
+//    }
 }
