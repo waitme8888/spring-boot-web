@@ -4,11 +4,13 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Service;
 
 import com.waitme.jpa.model.User;
 import com.waitme.jpa.repository.UserRepository;
 import com.waitme.jpa.service.UserService;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -42,6 +44,15 @@ public class UserServiceImpl implements UserService {
 	public User update(User user) {
 		return userRepository.save(user);
 		
+	}
+
+	@Transactional()
+	@Override
+	public void deleteUser(Long id) {
+		User user = userRepository.findOne(id);
+		System.out.println(user.getName());
+		userRepository.delete(id);
+		throw new RuntimeException();
 	}
 
 }

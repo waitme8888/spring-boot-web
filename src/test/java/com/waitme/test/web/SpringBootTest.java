@@ -29,7 +29,10 @@ public class SpringBootTest {
 	
 	@Resource(name="mybatisUserService")
 	private UserService userService;
-	
+
+	@Resource(name="userService")
+	private com.waitme.jpa.service.UserService jpaUserService;
+
 	
 	@Test
 	public void jpaTest() {
@@ -54,6 +57,11 @@ public class SpringBootTest {
 	@Test
 	public void mybatisTransactionTest() {
 		userService.deleteTransaction(3L);
+	}
+
+	@Test
+	public void jpaTransactionTest() {
+		jpaUserService.deleteUser(3L);
 	}
 
 }
