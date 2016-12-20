@@ -7,14 +7,14 @@ import java.util.Map;
 
 @Controller
 public class TemplateController {
-    /**
-     * 返回html模板.
-     */
-    @RequestMapping("/hello")
-    public String helloHtml(Map<String,Object> map){
-        map.put("hello","from TemplateControllerqqq.helloHtml");
-        return "hello";
-    }
+//    /**
+//     * 返回html模板.
+//     */
+//    @RequestMapping("/hello")
+//    public String helloHtml(Map<String,Object> map){
+//        map.put("hello","from TemplateControllerqqq.helloHtml");
+//        return "hello";
+//    }
 //    /**
 //     * 返回html模板.
 //     */
@@ -23,4 +23,11 @@ public class TemplateController {
 //        map.put("hello","from TemplateController.helloFtl");
 //        return"/helloFtl";
 //    }
+
+    @RequestMapping("/hello/jsp")
+    public String helloHtml(Map<String, Object> map) {
+        map.put("hello", "from TemplateControllerqqq.helloHtml");
+        System.out.println("jsp");
+        return "helloJsp";
+    }
 }
