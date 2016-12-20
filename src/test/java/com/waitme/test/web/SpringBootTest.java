@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
@@ -32,6 +34,9 @@ public class SpringBootTest {
 
 	@Resource(name="userService")
 	private com.waitme.jpa.service.UserService jpaUserService;
+
+	@Resource
+	RedisTemplate<Object, Object> redisTemplate;
 
 	
 	@Test
@@ -62,6 +67,15 @@ public class SpringBootTest {
 	@Test
 	public void jpaTransactionTest() {
 		jpaUserService.deleteUser(3L);
+	}
+
+	@Test
+	public void redisTest() {
+		this.redisTemplate.setKeySerializer(this.redisTemplate.getStringSerializer());
+		String key = "stringKey";
+		String value = "stringValue";
+		this.redisTemplate.opsForValue().set(key, value);
+		System.out.println(this.redisTemplate.opsForValue().get(key));
 	}
 
 }
