@@ -1,7 +1,6 @@
 package com.waitme.mybatis.dao;
 
 import com.waitme.mybatis.model.User;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

@@ -28,6 +28,7 @@ public class TemplateController {
     public String helloHtml(Map<String, Object> map) {
         map.put("hello", "from TemplateControllerqqq.helloHtml");
         System.out.println("jsp");
-        return "helloJsp";
+        throw new RuntimeException("运行异常！");
+//        return "helloJsp";
     }
 }
