@@ -1,4 +1,4 @@
-package com.waitme.Exception;
+package com.waitme.exception;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
