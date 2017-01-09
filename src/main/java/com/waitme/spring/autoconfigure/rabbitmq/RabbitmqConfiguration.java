@@ -20,6 +20,7 @@ import java.util.Date;
 public class RabbitmqConfiguration {
 
     @Configuration
+    @ConditionalOnProperty(prefix = "spring.rabbitmq", name = "host")
     protected static class RabbitmqDemoConfiguration {
 
         @Bean

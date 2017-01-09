@@ -34,4 +34,6 @@ public class SpringRabbitmqTest {
         }
         //System.out.println("rabbitmq send message end...");
     }
+
+
 }
